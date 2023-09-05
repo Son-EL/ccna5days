@@ -48,3 +48,302 @@ dns-server 10.61.1.10
 option 150 ip 10.61.100.8
 Int fa 0/5 
  swi acc vlan 25
+ 
+  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ 
+ config t
+vlan 25
+name DUKHAKAMI.COM
+int vlan 25
+no shut
+ip add 10.0.0.33 255.255.255.224
+ip dhcp excluded-add 10.0.0.33 10.0.0.37
+ip dhcp pool DUKHAKAMI.COM
+Network 10.0.0.32 255.255.255.224
+default-router 10.0.0.33
+domain-name DUKHAKAMI.COM
+dns-server 10.61.1.10
+option 150 ip 10.61.100.8
+Int fa 0/5 
+ swi acc vlan 25
+ 
+ 
+ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ 
+ Microsoft Windows [Version 10.0.20348.1726]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Administrator>ping 10.61.50.6
+
+Pinging 10.61.50.6 with 32 bytes of data:
+Reply from 10.61.50.6: bytes=32 time=1ms TTL=126
+Reply from 10.61.50.6: bytes=32 time=1ms TTL=126
+Reply from 10.61.50.6: bytes=32 time=1ms TTL=126
+Reply from 10.61.50.6: bytes=32 time=1ms TTL=126
+
+Ping statistics for 10.61.50.6:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+
+C:\Users\Administrator>ping 10.61.50.8
+
+Pinging 10.61.50.8 with 32 bytes of data:
+Reply from 10.61.50.8: bytes=32 time=1ms TTL=126
+Reply from 10.61.50.8: bytes=32 time=1ms TTL=126
+Reply from 10.61.50.8: bytes=32 time=1ms TTL=126
+Reply from 10.61.50.8: bytes=32 time=1ms TTL=126
+
+Ping statistics for 10.61.50.8:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+
+C:\Users\Administrator>ping big.liveshow61.com
+
+Pinging big.liveshow61.com [10.61.50.8] with 32 bytes of data:
+Reply from 10.61.50.8: bytes=32 time=1ms TTL=126
+Reply from 10.61.50.8: bytes=32 time=1ms TTL=126
+Reply from 10.61.50.8: bytes=32 time=1ms TTL=126
+Reply from 10.61.50.8: bytes=32 time=1ms TTL=126
+
+Ping statistics for 10.61.50.8:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+
+C:\Users\Administrator>tracert www.x-art.com
+
+Tracing route to www.x-art.com [74.206.167.247]
+over a maximum of 30 hops:
+
+  1     2 ms     2 ms     3 ms  10.3.3.1
+  2     2 ms     1 ms     1 ms  192.168.100.1
+  3     5 ms     5 ms     5 ms  10.176.32.1
+  4     6 ms     6 ms     5 ms  172.20.38.81
+  5     *        *        *     Request timed out.
+  6     *        *        *     Request timed out.
+  7     *        *        *     Request timed out.
+  8    33 ms    35 ms    33 ms  161.49.11.225.convergeict.com [161.49.11.225]
+  9     *        *        *     Request timed out.
+ 10     *        *        *     Request timed out.
+ 11     *        *        *     Request timed out.
+ 12     *        *        *     Request timed out.
+ 13   217 ms     *      216 ms  port-channel9.core1.phx2.he.net [184.104.194.98]
+ 14   235 ms   263 ms   248 ms  100ge0-29.core1.aus1.he.net [184.105.81.167]
+ 15   239 ms     *        *     100ge0-32.core2.hou1.he.net [184.104.197.42]
+ 16     *        *      261 ms  port-channel15.core2.mia1.he.net [184.105.222.149]
+ 17   263 ms   263 ms   269 ms  eqix-mi1.easyonlinesolutions.com [198.32.242.159]
+ 18   262 ms   264 ms   261 ms  64.59.80.53
+ 19   264 ms   264 ms   263 ms  74.206.167.247
+
+Trace complete.
+
+C:\Users\Administrator>ping fe80:000a:000b:000c:0000:0000:0000:a123
+
+Pinging fe80:a:b:c::a123 with 32 bytes of data:
+PING: transmit failed. General failure.
+PING: transmit failed. General failure.
+PING: transmit failed. General failure.
+PING: transmit failed. General failure.
+
+Ping statistics for fe80:a:b:c::a123:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\Users\Administrator>ping fe80:0000:000b:0000:0000:0000:0000:a123
+
+Pinging fe80:0:b::a123 with 32 bytes of data:
+PING: transmit failed. General failure.
+PING: transmit failed. General failure.
+PING: transmit failed. General failure.
+PING: transmit failed. General failure.
+
+Ping statistics for fe80:0:b::a123:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\Users\Administrator>ping 127.0.0.1
+
+Pinging 127.0.0.1 with 32 bytes of data:
+Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
+Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
+Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
+Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
+
+Ping statistics for 127.0.0.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\Users\Administrator>ping::1
+The filename, directory name, or volume label syntax is incorrect.
+
+C:\Users\Administrator>ping ::1
+
+Pinging ::1 with 32 bytes of data:
+Reply from ::1: time<1ms
+Reply from ::1: time<1ms
+Reply from ::1: time<1ms
+Reply from ::1: time<1ms
+
+Ping statistics for ::1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\Users\Administrator>route print
+===========================================================================
+Interface List
+ 11...3c e9 f7 bf 9a 10 ......Microsoft Wi-Fi Direct Virtual Adapter
+ 14...3e e9 f7 bf 9a 0f ......Microsoft Wi-Fi Direct Virtual Adapter #2
+  8...3c e9 f7 bf 9a 0f ......Intel(R) Wi-Fi 6E AX210 160MHz
+ 18...c0 25 a5 c9 ff b3 ......Realtek PCIe GbE Family Controller
+ 21...00 50 56 c0 00 01 ......VMware Virtual Ethernet Adapter for VMnet1
+  6...00 50 56 c0 00 08 ......VMware Virtual Ethernet Adapter for VMnet8
+ 20...00 50 56 c0 00 02 ......VMware Virtual Ethernet Adapter for VMnet2
+ 17...00 50 56 c0 00 03 ......VMware Virtual Ethernet Adapter for VMnet3
+  2...00 50 56 c0 00 0a ......VMware Virtual Ethernet Adapter for VMnet10
+ 25...00 50 56 c0 00 04 ......VMware Virtual Ethernet Adapter for VMnet4
+ 24...00 50 56 c0 00 07 ......VMware Virtual Ethernet Adapter for VMnet7
+  1...........................Software Loopback Interface 1
+===========================================================================
+
+IPv4 Route Table
+===========================================================================
+Active Routes:
+Network Destination        Netmask          Gateway       Interface  Metric
+          0.0.0.0          0.0.0.0        10.61.1.4       10.61.1.10    291
+          0.0.0.0          0.0.0.0         10.3.3.1       10.3.3.103     30
+         10.0.0.0        255.0.0.0        10.61.1.4       10.61.1.10     36
+         10.3.3.0    255.255.255.0         On-link        10.3.3.103    286
+       10.3.3.103  255.255.255.255         On-link        10.3.3.103    286
+       10.3.3.255  255.255.255.255         On-link        10.3.3.103    286
+        10.61.0.0      255.255.0.0        10.61.1.4       10.61.1.10     36
+        10.61.1.0    255.255.255.0         On-link        10.61.1.10    291
+       10.61.1.10  255.255.255.255         On-link        10.61.1.10    291
+      10.61.1.255  255.255.255.255         On-link        10.61.1.10    291
+        100.0.0.0    255.255.255.0         On-link         100.0.0.1    291
+        100.0.0.1  255.255.255.255         On-link         100.0.0.1    291
+      100.0.0.255  255.255.255.255         On-link         100.0.0.1    291
+        127.0.0.0        255.0.0.0         On-link         127.0.0.1    331
+        127.0.0.1  255.255.255.255         On-link         127.0.0.1    331
+  127.255.255.255  255.255.255.255         On-link         127.0.0.1    331
+    192.168.101.0    255.255.255.0         On-link     192.168.101.1    291
+    192.168.101.1  255.255.255.255         On-link     192.168.101.1    291
+  192.168.101.255  255.255.255.255         On-link     192.168.101.1    291
+    192.168.102.0    255.255.255.0         On-link     192.168.102.1    291
+    192.168.102.1  255.255.255.255         On-link     192.168.102.1    291
+  192.168.102.255  255.255.255.255         On-link     192.168.102.1    291
+    192.168.103.0    255.255.255.0         On-link     192.168.103.1    291
+    192.168.103.1  255.255.255.255         On-link     192.168.103.1    291
+  192.168.103.255  255.255.255.255         On-link     192.168.103.1    291
+    192.168.104.0    255.255.255.0         On-link     192.168.104.1    291
+    192.168.104.1  255.255.255.255         On-link     192.168.104.1    291
+  192.168.104.255  255.255.255.255         On-link     192.168.104.1    291
+    192.168.107.0    255.255.255.0         On-link     192.168.107.1    291
+    192.168.107.1  255.255.255.255         On-link     192.168.107.1    291
+  192.168.107.255  255.255.255.255         On-link     192.168.107.1    291
+    192.168.108.0    255.255.255.0         On-link     192.168.108.1    291
+    192.168.108.1  255.255.255.255         On-link     192.168.108.1    291
+  192.168.108.255  255.255.255.255         On-link     192.168.108.1    291
+        200.0.0.0    255.255.255.0        10.61.1.4       10.61.1.10     36
+        224.0.0.0        240.0.0.0         On-link         127.0.0.1    331
+        224.0.0.0        240.0.0.0         On-link     192.168.101.1    291
+        224.0.0.0        240.0.0.0         On-link     192.168.108.1    291
+        224.0.0.0        240.0.0.0         On-link     192.168.102.1    291
+        224.0.0.0        240.0.0.0         On-link     192.168.103.1    291
+        224.0.0.0        240.0.0.0         On-link         100.0.0.1    291
+        224.0.0.0        240.0.0.0         On-link     192.168.104.1    291
+        224.0.0.0        240.0.0.0         On-link     192.168.107.1    291
+        224.0.0.0        240.0.0.0         On-link        10.61.1.10    291
+        224.0.0.0        240.0.0.0         On-link        10.3.3.103    286
+  255.255.255.255  255.255.255.255         On-link         127.0.0.1    331
+  255.255.255.255  255.255.255.255         On-link     192.168.101.1    291
+  255.255.255.255  255.255.255.255         On-link     192.168.108.1    291
+  255.255.255.255  255.255.255.255         On-link     192.168.102.1    291
+  255.255.255.255  255.255.255.255         On-link     192.168.103.1    291
+  255.255.255.255  255.255.255.255         On-link         100.0.0.1    291
+  255.255.255.255  255.255.255.255         On-link     192.168.104.1    291
+  255.255.255.255  255.255.255.255         On-link     192.168.107.1    291
+  255.255.255.255  255.255.255.255         On-link        10.61.1.10    291
+  255.255.255.255  255.255.255.255         On-link        10.3.3.103    286
+===========================================================================
+Persistent Routes:
+  Network Address          Netmask  Gateway Address  Metric
+        10.61.0.0      255.255.0.0        10.61.1.4       1
+          0.0.0.0          0.0.0.0        10.61.1.4  Default
+===========================================================================
+
+IPv6 Route Table
+===========================================================================
+Active Routes:
+ If Metric Network Destination      Gateway
+ 18    291 ::/0                     cafe:cafe:cafe:6161::ffff
+  1    331 ::1/128                  On-link
+ 18    291 cafe:cafe:cafe:6161::/64 On-link
+ 18    291 cafe:cafe:cafe:6161::abcd/128
+                                    On-link
+ 21    291 fe80::/64                On-link
+  6    291 fe80::/64                On-link
+ 20    291 fe80::/64                On-link
+ 17    291 fe80::/64                On-link
+  2    291 fe80::/64                On-link
+ 25    291 fe80::/64                On-link
+ 24    291 fe80::/64                On-link
+ 18    291 fe80::/64                On-link
+ 18    291 fe80::221:f9b9:2ccb:7c00/128
+                                    On-link
+  2    291 fe80::2f1a:2f66:10ad:4938/128
+                                    On-link
+ 17    291 fe80::426f:8032:9b6f:6798/128
+                                    On-link
+ 21    291 fe80::55f2:217a:d770:2d22/128
+                                    On-link
+ 20    291 fe80::c3c8:9d22:3e8c:3178/128
+                                    On-link
+ 24    291 fe80::c883:a276:8d26:28f/128
+                                    On-link
+ 25    291 fe80::d2b9:e5ca:277a:8021/128
+                                    On-link
+  6    291 fe80::fb0e:c64:50cc:c1b1/128
+                                    On-link
+  1    331 ff00::/8                 On-link
+ 21    291 ff00::/8                 On-link
+  6    291 ff00::/8                 On-link
+ 20    291 ff00::/8                 On-link
+ 17    291 ff00::/8                 On-link
+  2    291 ff00::/8                 On-link
+ 25    291 ff00::/8                 On-link
+ 24    291 ff00::/8                 On-link
+ 18    291 ff00::/8                 On-link
+===========================================================================
+Persistent Routes:
+ If Metric Network Destination      Gateway
+  0 4294967295 ::/0                     cafe:cafe:cafe:6161::ffff
+===========================================================================
+
+C:\Users\Administrator>ping cafe:cafe:face:6161::aaaa
+
+Pinging cafe:cafe:face:6161::aaaa with 32 bytes of data:
+Reply from cafe:cafe:face:6161::aaaa: time<1ms
+Reply from cafe:cafe:face:6161::aaaa: time<1ms
+Reply from cafe:cafe:face:6161::aaaa: time<1ms
+Reply from cafe:cafe:face:6161::aaaa: time<1ms
+
+Ping statistics for cafe:cafe:face:6161::aaaa:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\Users\Administrator>ping www.ipv6.com.ph
+
+Pinging www.ipv6.com.ph [45.79.222.138] with 32 bytes of data:
+Reply from 45.79.222.138: bytes=32 time=226ms TTL=47
+Reply from 45.79.222.138: bytes=32 time=226ms TTL=47
+Reply from 45.79.222.138: bytes=32 time=227ms TTL=47
+C:\Users\Administrator>8: bytes=32 time=227ms TTL=47
+
+C:\Users\Administrator>79.222.138:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+C:\Users\Administrator>times in milli-seconds:
+    Minimum = 226ms, Maximum = 227ms, Average = 226ms
+C:\Users\Administrator>
