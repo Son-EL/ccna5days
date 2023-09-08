@@ -1,0 +1,16 @@
+{
+"aironet":[
+    {
+        "host_ip": "10.61.10.3",
+        "hostname": "61NelsonAironet",
+        "username": "admin",
+        "password": "pass",
+        "ssid": "61-RIVANCYBER",
+        "authentication": "open",
+        "key-man": "wpa",
+        "wifi-pass": "C1sc0123",
+        "channel": "8",
+        "enc-mod": "tkip"
+    }
+]
+}
